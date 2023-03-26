@@ -1,3 +1,4 @@
+import { Transform, TransformFnParams } from 'class-transformer';
 import {
   IsBoolean,
   IsEnum,
@@ -14,17 +15,26 @@ export class CreateIndustryChangeDto {
   @IsBoolean()
   willWorkInPhysicalJurisdiction: boolean;
 
-  // @IsNullIfFalse('willWorkInPhysicalJurisdiction')
+  @Transform(({ value, obj }: TransformFnParams) =>
+    obj.willWorkInPhysicalJurisdiction ? value : null,
+  )
+  @Transform(({ value, obj }: TransformFnParams) =>
+    obj.willWorkInPhysicalJurisdiction ? value : null,
+  )
   @ValidateIf((o) => o.willWorkInPhysicalJurisdiction)
   @IsEnum(Industry)
   industry?: Industry;
 
-  // @IsNullIfFalse('willWorkInPhysicalJurisdiction')
+  @Transform(({ value, obj }: TransformFnParams) =>
+    obj.willWorkInPhysicalJurisdiction ? value : null,
+  )
   @ValidateIf((o) => o.willWorkInPhysicalJurisdiction)
   @IsEnum(RegulatoryElection)
   regulatoryElection?: RegulatoryElection;
 
-  // @IsNullIfFalse('willWorkInPhysicalJurisdiction')
+  @Transform(({ value, obj }: TransformFnParams) =>
+    obj.willWorkInPhysicalJurisdiction ? value : null,
+  )
   @ValidateIf((o) => o.willWorkInPhysicalJurisdiction)
   @IsString()
   regulatoryElectionSub?: string;

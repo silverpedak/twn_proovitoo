@@ -19,12 +19,12 @@ export class ResidentRegisterService {
     return await this.residentModel.findOne({ sub });
   }
 
-  async findByQuery(
-    queryParams: FilterQuery<Resident>,
-  ): Promise<Resident | null> {
-    const resident = await this.residentModel.findOne(queryParams).exec();
-    return resident;
-  }
+  // async findByQuery(
+  //   queryParams: FilterQuery<Resident>,
+  // ): Promise<Resident | null> {
+  //   const resident = await this.residentModel.findOne(queryParams).exec();
+  //   return resident;
+  // }
 
   async create(resident: Resident): Promise<Resident> {
     return await this.residentModel.create(resident);

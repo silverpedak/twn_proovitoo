@@ -1,3 +1,51 @@
+## Usage
+
+- make your way to api folder `cd api`
+- install dependencies `npm i`
+- add your MongoDB connection url in src/app.module.ts line 8. Example: `const MONGO_URI = mongodb://localhost:27017`
+- start the server `npm run start` or `npm run start:dev`
+
+Some samples to make requests:
+
+- POST: `http://localhost:3000/resident-register/industry-change-application`
+
+  body:
+
+  ```
+  {
+    "residentSub": "5a9a0497-348d-466b-b740-f1696f3ab377",
+    "willWorkInPhysicalJurisdiction": true,
+    "industry": "Agricultural Industry|Industria agrícola",
+    "regulatoryElection": "Austria|Austria",
+    "regulatoryElectionSub": "randomstring"
+  }
+  ```
+
+- GET(query) `http://localhost:3000/resident-register/industry-change-application`
+
+  body:
+
+  ```
+  {
+    "statuses": ["APPROVED", "IN_REVIEW"],
+    "residentSub": "5a9a0497-348d-466b-b740-f1696f3ab377"
+  }
+  ```
+
+- GET/:id `http://localhost:3000/resident-register/industry-change-application/<find _id from previous GET response body>`
+- DELETE `http://localhost:3000/resident-register/industry-change-application`
+
+  body:
+
+  ```
+  {
+    "deleteIds":
+    [
+      "find ids from query response",
+    ]
+  }
+  ```
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>

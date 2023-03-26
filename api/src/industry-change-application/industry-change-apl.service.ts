@@ -28,7 +28,6 @@ import {
   validateResidency,
   calculateApplicationStatus,
 } from './utils';
-import { application } from 'express';
 
 @Injectable()
 export class IndustryChangeApplicationService {
