@@ -5,11 +5,11 @@ import { IndustryChangeApplicationModule } from './industry-change-application/i
 
 import { ResidentRegisterModule } from './resident-register/resident-register.module';
 
-const MONGODB_URI = 'mongodb://localhost:27017/resident-register';
+const MONGO_URI = 'mongodb://localhost:27017/resident-register';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(MONGODB_URI),
+    MongooseModule.forRoot(MONGO_URI),
     IndustryChangeApplicationModule,
     ResidentRegisterModule,
   ],

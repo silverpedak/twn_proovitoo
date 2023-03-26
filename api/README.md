@@ -2,8 +2,9 @@
 
 - make your way to api folder `cd api`
 - install dependencies `npm i`
-- add your MongoDB connection url in src/app.module.ts line 8. Example: `const MONGO_URI = mongodb://localhost:27017`
+- add your MongoDB connection url in src/app.module.ts line 8. Example: `const MONGO_URI = 'mongodb://localhost:27017/resident-register'`
 - start the server `npm run start` or `npm run start:dev`
+- to run tests `npm run test`
 
 Some samples to make requests:
 
@@ -21,6 +22,8 @@ Some samples to make requests:
   }
   ```
 
+- GET/:id `http://localhost:3000/resident-register/industry-change-application/<find _id from previous POST response body>`
+
 - GET(query) `http://localhost:3000/resident-register/industry-change-application`
 
   body:
@@ -32,7 +35,6 @@ Some samples to make requests:
   }
   ```
 
-- GET/:id `http://localhost:3000/resident-register/industry-change-application/<find _id from previous GET response body>`
 - DELETE `http://localhost:3000/resident-register/industry-change-application`
 
   body:
@@ -41,7 +43,7 @@ Some samples to make requests:
   {
     "deleteIds":
     [
-      "find ids from query response",
+      "find ids from query response"
     ]
   }
   ```
