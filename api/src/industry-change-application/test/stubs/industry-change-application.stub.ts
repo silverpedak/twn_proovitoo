@@ -1,6 +1,6 @@
 import {
   IndustryChangeApplicationStatus,
-  ObjectStatusIndChangeApl,
+  ObjectStatusIndustryChangeApp,
 } from 'src/common/constants/enums';
 import { IndustryChangeApplication } from 'src/industry-change-application/schemas';
 
@@ -18,7 +18,7 @@ export const industryChangeApplicationStub = (
     status: IndustryChangeApplicationStatus.IN_REVIEW,
     createdAt: new Date(),
     updatedAt: new Date(),
-    objectStatus: ObjectStatusIndChangeApl.CURRENT,
+    objectStatus: ObjectStatusIndustryChangeApp.CURRENT,
     ...params,
   };
 };

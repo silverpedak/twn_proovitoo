@@ -5,10 +5,10 @@ import {
 } from '.';
 import {
   IndustryChangeApplicationStatus,
-  ObjectStatusIndChangeApl,
+  ObjectStatusIndustryChangeApp,
 } from '../constants/enums';
 
-export type IndustryChangeApplication = {
+export interface IndustryChangeApplication {
   _id: string;
   residentSub: string;
   current: CurrentIndustry;
@@ -20,5 +20,5 @@ export type IndustryChangeApplication = {
   createdBy?: string;
   updatedAt: Date;
   updatedBy?: string;
-  objectStatus: ObjectStatusIndChangeApl;
-};
+  objectStatus: ObjectStatusIndustryChangeApp;
+}

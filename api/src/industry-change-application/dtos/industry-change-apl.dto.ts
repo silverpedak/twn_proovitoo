@@ -11,7 +11,7 @@ import {
 import {
   Industry,
   IndustryChangeApplicationStatus,
-  ObjectStatusIndChangeApl,
+  ObjectStatusIndustryChangeApp,
   RegulatoryElection,
 } from 'src/common/constants/enums';
 
@@ -78,6 +78,6 @@ export class IndustryChangeDto {
   @IsObject()
   decision?: DecisionChangeIndustryDto;
 
-  @IsEnum(ObjectStatusIndChangeApl)
-  objectStatus: ObjectStatusIndChangeApl;
+  @IsEnum(ObjectStatusIndustryChangeApp)
+  objectStatus: ObjectStatusIndustryChangeApp;
 }

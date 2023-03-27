@@ -1,6 +1,6 @@
 import {
   IndustryChangeApplicationStatus,
-  ObjectStatusIndChangeApl,
+  ObjectStatusIndustryChangeApp,
 } from 'src/common/constants/enums';
 import { Resident } from 'src/common/interfaces';
 import { CreateIndustryChangeDto } from '../dtos';
@@ -39,7 +39,7 @@ export const createNewIndustryChangeApplication = (
     createdBy: 'user id from JWT',
     updatedAt: currentDateTime,
     updatedBy: 'user id from JWT',
-    objectStatus: ObjectStatusIndChangeApl.CURRENT,
+    objectStatus: ObjectStatusIndustryChangeApp.CURRENT,
   };
   return newApplication;
 };

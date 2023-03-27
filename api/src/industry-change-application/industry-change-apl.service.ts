@@ -4,7 +4,7 @@ import * as mongoose from 'mongoose';
 
 import {
   IndustryChangeApplicationStatus,
-  ObjectStatusIndChangeApl,
+  ObjectStatusIndustryChangeApp,
 } from 'src/common/constants/enums';
 
 import { Resident, ResidentDocument } from 'src/resident-register/schemas';
@@ -94,7 +94,7 @@ export class IndustryChangeApplicationService {
     });
     if (
       !applicationFound ||
-      applicationFound?.objectStatus !== ObjectStatusIndChangeApl.CURRENT
+      applicationFound?.objectStatus !== ObjectStatusIndustryChangeApp.CURRENT
     ) {
       throw new ApplicationNotFoundException();
     }
@@ -108,7 +108,7 @@ export class IndustryChangeApplicationService {
     const applicationsFound = await this.industryChangeAplModel.find({
       residentSub,
       status: { $in: [...statuses] },
-      objectStatus: ObjectStatusIndChangeApl.CURRENT,
+      objectStatus: ObjectStatusIndustryChangeApp.CURRENT,
     });
     return applicationsFound;
   }
@@ -119,7 +119,7 @@ export class IndustryChangeApplicationService {
     for (const id of ids) {
       const deleted = await this.industryChangeAplModel.findOneAndUpdate(
         { _id: id, status: IndustryChangeApplicationStatus.IN_REVIEW },
-        { objectStatus: ObjectStatusIndChangeApl.DELETED },
+        { objectStatus: ObjectStatusIndustryChangeApp.DELETED },
         { new: true },
       );
       if (!deleted) {

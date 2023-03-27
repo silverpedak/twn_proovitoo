@@ -5,7 +5,7 @@ import { IndustryChangeApplication } from '../schemas';
 import { Resident } from 'src/resident-register/schemas';
 import {
   IndustryChangeApplicationStatus,
-  ObjectStatusIndChangeApl,
+  ObjectStatusIndustryChangeApp,
   ResidentStatus,
   TypeOfRegistration,
 } from 'src/common/constants/enums';
@@ -85,7 +85,7 @@ describe('IndustryChangeApplicationService', () => {
     it('should throw ApplicationNotFoundException when status is not "CURRENT"', async () => {
       //arrange
       const application = industryChangeApplicationStub({
-        objectStatus: ObjectStatusIndChangeApl.DELETED,
+        objectStatus: ObjectStatusIndustryChangeApp.DELETED,
       });
       industryChangeModelMock.findOne.mockResolvedValueOnce(application);
       //assert

@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
 import {
-  ObjectStatusIndChangeApl,
+  ObjectStatusIndustryChangeApp,
   IndustryChangeApplicationStatus,
 } from 'src/common/constants/enums';
 import {
@@ -47,7 +47,7 @@ export class IndustryChangeApplication {
   updatedBy?: string;
 
   @Prop({ required: true })
-  objectStatus: ObjectStatusIndChangeApl;
+  objectStatus: ObjectStatusIndustryChangeApp;
 }
 
 export const IndustryChangeApplicationSchema = SchemaFactory.createForClass(
